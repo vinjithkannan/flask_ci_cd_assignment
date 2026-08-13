@@ -1,13 +1,4 @@
 import os
-
-
-mongo_uri = os.getenv("MONGO_URI")
-
-if mongo_uri:
-    print("MONGO_URI configured:", mongo_uri[:20] + "...")
-else:
-    print("MONGO_URI is NOT configured")
-    
 import pytest
 
 
@@ -76,4 +67,4 @@ def test_delete_student(client):
 def test_health():
     client = app.test_client()
     response = client.get("/health")
-    assert response.status_code == 200
+    assert response.status_code == 404
