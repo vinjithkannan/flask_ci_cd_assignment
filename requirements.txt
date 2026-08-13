@@ -1,7 +1,7 @@
 Flask
 Flask-PyMongo
 python-dotenv
-pymongo
+pymongo[srv]==3.12
 certifi
 pytest
 pylint
