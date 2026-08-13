@@ -13,6 +13,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: flask_ci_cd_assignment_environment
 
     steps:
 
@@ -41,11 +42,17 @@ jobs:
       # Test
       ####################################################
 
-      - name: Run Tests
+      - name: Run pytest
         env:
-            MONGO_URI: ${{ secrets.MONGO_URI }}
-            SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
+          if [ -z "$MONGO_URI" ]; then
+            echo "ERROR: MONGO_URI is not available"
+            exit 1
+          fi
+
+          echo "MONGO_URI is available"
           pytest
 
       ####################################################
