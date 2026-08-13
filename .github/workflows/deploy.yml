@@ -117,7 +117,11 @@ jobs:
           docker run -d \
           --name flask-app \
           -p 80:5000 \
-          ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+          -e SECRET_KEY='${{ secrets.SECRET_KEY }}' \
+          -e MONGODB_USERNAME='${{ secrets.MONGODB_USERNAME }}' \
+          -e MONGODB_PASSWORD='${{ secrets.MONGODB_PASSWORD }}' \
+          -e MONGO_URI='${{ secrets.MONGO_URI }}' \
+           ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
 
           sleep 10
 
