@@ -38,6 +38,11 @@ flask_ci_cd_assignment/
 ├── Dockerfile
 ├── test_app.py
 ├── README.md
+└── .github/
+    └── base.html
+    └── index.html
+    └── add_student.html
+    └── update_student.html
 │
 └── .github/
     └── workflows/
