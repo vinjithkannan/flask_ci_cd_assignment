@@ -376,54 +376,7 @@ The workflow URL allows the failure to be investigated immediately.
 
 ---
 
-# 14. Complete Evidence Summary
-
-The following screenshots are included as evidence of the completed assignment:
-
-| #  | Evidence                | Screenshot                       |
-| -- | ----------------------- | -------------------------------- |
-| 1  | GitHub Repository       | `01-github-repository.png`       |
-| 2  | GitHub Actions Workflow | `02-github-actions-workflow.png` |
-| 3  | Green Pipeline          | `03-green-pipeline.png`          |
-| 4  | Amazon ECR Image        | `04-ecr-image.png`               |
-| 5  | EC2 Running Container   | `05-ec2-running-container.png`   |
-| 6  | `docker ps`             | `06-docker-ps.png`               |
-| 7  | Browser – Application   | `07-browser-home.png`            |
-| 8  | Browser – `/health`     | `08-browser-health.png`          |
-| 9  | Success Email           | `09-success-email.png`           |
-| 10 | Failed Pipeline         | `10-failed-pipeline.png`         |
-| 11 | Failure Email           | `11-failure-email.png`           |
-
----
-
-# 15. Assignment Requirement Mapping
-
-| Assignment Requirement    | Implementation    | Evidence                  |
-| ------------------------- | ----------------- | ------------------------- |
-| Flask application         | `app.py`          | GitHub Repository         |
-| Health endpoint           | `/health`         | Browser Health Screenshot |
-| `requirements.txt`        | Included          | GitHub Repository         |
-| Pytest test suite         | `test_app.py`     | Green/Failed Pipeline     |
-| Dockerfile                | Included          | GitHub Repository         |
-| ECR repository            | Amazon ECR        | ECR Screenshot            |
-| EC2 deployment            | Docker on EC2     | EC2 Screenshot            |
-| Automated testing         | GitHub Actions    | Green Pipeline            |
-| Docker build              | GitHub Actions    | Green Pipeline            |
-| SHA-based image tag       | Git commit SHA    | ECR Screenshot            |
-| Push to ECR               | GitHub Actions    | ECR Screenshot            |
-| Deploy to EC2             | SSH deployment    | EC2 Screenshot            |
-| Container verification    | `docker ps`       | Docker PS Screenshot      |
-| Application verification  | `/health`         | Browser Screenshot        |
-| Success notification      | Email             | Success Email             |
-| Failure notification      | Email             | Failure Email             |
-| Failure-stage information | Failed test stage | Failure Email             |
-| Automatic trigger         | Push to `main`    | GitHub Actions            |
-| Secrets management        | GitHub Secrets    | Workflow Configuration    |
-| Documentation             | README.md         | Repository                |
-
----
-
-# 16. Repository and Pipeline Links
+# 14. Repository and Pipeline Links
 
 ### GitHub Repository
 
@@ -439,7 +392,7 @@ https://github.com/vinjithkannan/flask_ci_cd_assignment/actions
 
 ---
 
-# 17. Conclusion
+# 15. Conclusion
 
 This project demonstrates an end-to-end CI/CD pipeline for a Python Flask application.
 
@@ -466,4 +419,3 @@ Email Notification
 The successful execution demonstrates automated testing, containerization, image management, cloud deployment, deployment verification, and operational notification.
 
 The intentionally failed execution demonstrates that the pipeline prevents failed code from being deployed and provides an appropriate failure notification for troubleshooting.
-
