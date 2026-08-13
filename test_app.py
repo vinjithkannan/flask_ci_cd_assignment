@@ -1,5 +1,15 @@
 import os
+
+
+mongo_uri = os.getenv("MONGO_URI")
+
+if mongo_uri:
+    print("MONGO_URI configured:", mongo_uri[:20] + "...")
+else:
+    print("MONGO_URI is NOT configured")
+    
 import pytest
+
 
 from app import app, mongo
 from bson.objectid import ObjectId
